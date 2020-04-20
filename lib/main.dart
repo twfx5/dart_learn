@@ -32,9 +32,57 @@ void main() {
 
   //const time2 = new DateTime.now(); // 错误写法，final才是运行时常量
 
+  /// Dart 定义数组集合List
+  // 第一种方式
+  var l1 = ['123','234','345'];
+  print(l1); // [123, 234, 345]
 
+  int length = l1.length;
+  print(length); // 3
 
+  var a1 = l1[0];
+  print(a1); // 123 数组种第一个元素
 
+  // 第二种方式
+  var l2 = new List();
+  l2.add("123");
+  l2.add("234");
+  l2.add("345");
+  print(l2[1]); // 234
+
+  // 定义List指定类型
+  var l3 = new List<int>();
+  l3.add(1);
+  l3.add(2);
+
+  /// Dart 定义Maps字典（类似json数据）
+  // 第一种方式
+  var person = {
+    "name":"张三",
+    "age":23,
+    "work":["程序员","男人"]
+  };
+  print(person); // {name: 张三, age: 23, work: [程序员, 男人]}
+  print(person['name']); // 张三
+  print(person["name"]); // 张三
+
+  // 第二种方式 new
+  var p = new Map();
+  p["name"] = "李四";
+  p["age"] = 24;
+  p["work"] = ["程序员","搬砖工"];
+  print(p); // {name: 李四, age: 24, work: [程序员, 搬砖工]}
+  print(p["work"]); // [程序员, 搬砖工]
+
+  /// Dart类型判断，通过is关键词
+  var strN = 1234;
+  if(strN is String) {
+    print("字符串");
+  } else if(strN is int){
+    print("int"); // 打印 int
+  } else {
+    print("其他类型");
+  }
 
   runApp(MyApp());
 }
